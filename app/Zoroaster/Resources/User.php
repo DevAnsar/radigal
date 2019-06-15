@@ -1,0 +1,104 @@
+<?php
+
+    namespace App\Zoroaster\Resources;
+
+
+    use Illuminate\Database\Eloquent\Model;
+    use KarimQaderi\Zoroaster\Abstracts\ZoroasterResource;
+    use KarimQaderi\Zoroaster\Fields\btnSave;
+    use KarimQaderi\Zoroaster\Fields\Group\Col;
+    use KarimQaderi\Zoroaster\Fields\Group\Panel;
+    use KarimQaderi\Zoroaster\Fields\Group\Row;
+    use KarimQaderi\Zoroaster\Fields\Group\RowOneColBg;
+    use KarimQaderi\Zoroaster\Fields\ID;
+    use KarimQaderi\Zoroaster\Fields\Password;
+    use KarimQaderi\Zoroaster\Fields\Text;
+
+
+    class User extends ZoroasterResource
+    {
+
+        /**
+         * مربوطه Model نام
+         *
+         * @var Model
+         */
+        public static $model = 'App\User';
+
+        /**
+         * دادن نمایش برای پیشفرض فیلد نام
+         *
+         * @var string
+         */
+        public $title = 'name';
+
+        /**
+         * جمع بصورت Resource نام
+         *
+         * مثال : ها پست
+         *
+         * @var string
+         */
+        public $label = 'کاربران';
+
+        /**
+         * فرد بصورت Resource نام
+         *
+         * مثال : پست
+         *
+         * @var string
+         */
+        public $singularLabel = 'کاربر';
+
+        /**
+         * جستحو قابل های فیلد
+         *
+         * @var array
+         */
+        public $search = [
+            'name' , 'id' ,
+        ];
+
+        /**
+         * دادها نمایش برای فیلدها گرفتن
+         *
+         * @return array
+         */
+        public function fields()
+        {
+            return [
+
+                new Row([
+                    new Col('uk-width-2-3' , [
+                        new Panel('' , [
+                            ID::make()->rules('required')->onlyOnIndex()->sortable() ,
+                            Text::make('نام' , 'name')->rules('required') ,
+                            Password::make('رمز کاربر' , 'password')->help('برای تغیر نکردن رمز کادر را خالی بزارید') ,
+                            Text::make('ایمیل' , 'email')->rules('required' , 'max:255') ,
+                        ]) ,
+                    ]) ,
+                    new Col('uk-width-1-3' , [
+                        new Panel('مشخصات' , [
+                            Text::make('تاریخ عضویت' , 'created_at') ,
+                        ]) ,
+
+                        new RowOneColBg([
+                            btnSave::make() ,
+                        ]) ,
+                    ]) ,
+                ]) ,
+
+            ];
+        }
+
+        /**
+         * فیلترها
+         *
+         * @return array
+         */
+        public function filters()
+        {
+            return[];
+        }
+
+    }

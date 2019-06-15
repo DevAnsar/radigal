@@ -1,0 +1,44 @@
+<?php
+
+    namespace DummyNamespace;
+
+    use Illuminate\Database\Eloquent\Builder;
+    use KarimQaderi\Zoroaster\ResourceFilters\AbstractFilters\BooleanFilter;
+    use KarimQaderi\Zoroaster\Traits\ResourceRequest;
+
+    class DummyClass extends BooleanFilter
+    {
+
+
+        /**
+         * نمایشی نام.
+         *
+         * @var string
+         */
+        public $label = "DummyClass";
+
+        /**
+         * فیلتر اعمال.
+         *
+         * @param Builder $query
+         * @param ResourceRequest $ResourceRequest
+         * @return Builder
+         */
+        public function apply($query , $ResourceRequest)
+        {
+            return $query;
+        }
+
+
+        /**
+         * فیلتر های گزینه.
+         *
+         * @return array
+         */
+        public function options()
+        {
+            return [];
+
+        }
+
+    }

@@ -1,0 +1,31 @@
+<?php
+
+    namespace DummyNamespace;
+
+    use Illuminate\Database\Eloquent\Builder;
+    use KarimQaderi\Zoroaster\ResourceFilters\AbstractFilters\DateFilter;
+    use KarimQaderi\Zoroaster\Traits\ResourceRequest;
+
+    class DummyClass extends DateFilter
+    {
+
+        /**
+         * نمایشی نام.
+         *
+         * @var string
+         */
+        public $label = "DummyClass";
+
+        /**
+         * فیلتر اعمال.
+         *
+         * @param Builder $query
+         * @param ResourceRequest $ResourceRequest
+         * @return Builder
+         */
+        public function apply($query , $ResourceRequest)
+        {
+            return $query;
+        }
+
+    }

@@ -1,0 +1,108 @@
+<?php
+
+    namespace App\Zoroaster\Resources;
+
+    use Illuminate\Database\Eloquent\Model;
+    use KarimQaderi\Zoroaster\Abstracts\ZoroasterResource;
+    use KarimQaderi\Zoroaster\Fields\btnSave;
+    use KarimQaderi\Zoroaster\Fields\Group\Col;
+    use KarimQaderi\Zoroaster\Fields\Group\Panel;
+    use KarimQaderi\Zoroaster\Fields\Group\Row;
+    use KarimQaderi\Zoroaster\Fields\Group\RowOneColBg;
+    use KarimQaderi\Zoroaster\Fields\ID;
+    use KarimQaderi\Zoroaster\Fields\PivotCheckBox;
+    use KarimQaderi\Zoroaster\Fields\Text;
+
+
+    class Role extends ZoroasterResource
+    {
+        /**
+         * مربوطه Model نام
+         *
+         * @var Model
+         */
+        public static $model = 'KarimQaderi\\Zoroaster\\Models\\Role';
+
+        /**
+         * دادن نمایش برای پیشفرض فیلد نام
+         *
+         * @var string
+         */
+        public $title = 'name';
+
+        /**
+         * جمع بصورت Resource نام
+         *
+         * مثال : ها پست
+         *
+         * @var string
+         */
+        public $label = 'نقش ها';
+
+        /**
+         * فرد بصورت Resource نام
+         *
+         * مثال : پست
+         *
+         * @var string
+         */
+        public $singularLabel = 'نقش';
+
+        /**
+         * جستحو قابل های فیلد
+         *
+         * @var array
+         */
+        public $search = [
+            'id' ,
+        ];
+
+        /**
+         * دادها نمایش برای فیلدها گرفتن
+         *
+         * @return array
+         */
+        public function fields()
+        {
+            return [
+
+                new Row([
+                    new Col('uk-width-2-3' , [
+                        new Panel('' , [
+                            ID::make()->rules('required')->sortable()->onlyOnIndex() ,
+                            Text::make('نام' , 'name')->rules('required') ,
+                            Text::make('guard name' , 'guard_name')->rules('required') ,
+                        ]) ,
+
+                        new RowOneColBg([
+                            btnSave::make() ,
+                        ]) ,
+
+                    ]) ,
+
+                    new Col('uk-width-1-3' , [
+                        new Panel('' , [PivotCheckBox::make('مجوز ها' , 'role')
+                            ->show('KarimQaderi\\Zoroaster\\Models\\Permission' , 'display_name' , 'id')
+                            ->pivot('KarimQaderi\\Zoroaster\\Models\\RoleHasPermission' , 'role_id' , 'permission_id')
+                            ->hideFromIndex() ,
+                        ]) ,
+                    ]) ,
+                ]) ,
+
+
+            ];
+        }
+
+
+        /**
+         * فیلترها
+         *
+         * @return array
+         */
+        public function filters()
+        {
+            return [];
+        }
+
+
+    }

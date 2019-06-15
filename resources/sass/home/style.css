@@ -1,0 +1,249 @@
+html{
+    font-size:16px;
+}
+@font-face {
+    font-family: 'modekaregular';
+    src: url('../fonts/woff2/modeka-webfont.woff2') format('woff2'),
+    url('../fonts/woff/modeka-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: oblique;
+
+}
+@font-face {
+    font-family: 'yekan' ;
+    font-style: normal;
+    font-weight: inherit;
+    src: url('../yekan-font/Yekan.eot'); /* IE9 Compat Modes */
+    src: url('../yekan-font/Yekan.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        /*url('../fonts/IRANSansWeb.woff2') format('woff2'), !* Super Modern Browsers *!*/
+    url('../yekan-font/Yekan.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../yekan-font/Yekan.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'parastoo' ;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../parastoo-font-v1.0.0-alpha5/web/Parastoo.eot'); /* IE9 Compat Modes */
+    src: url('../parastoo-font-v1.0.0-alpha5/web/Parastoo.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        /*url('../fonts/IRANSansWeb.woff2') format('woff2'), !* Super Modern Browsers *!*/
+    url('../parastoo-font-v1.0.0-alpha5/web/Parastoo.woff') format('woff'), /* Pretty Modern Browsers */
+    url('../parastoo-font-v1.0.0-alpha5/web/Parastoo.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+div , section , a ,h1 ,p ,span ,input ,textarea{
+    font-family: 'yekan' !important;
+}
+
+/*@font-face {*/
+    /*font-family: 'ansar';*/
+    /*font-style: normal;*/
+    /*font-weight: bold;*/
+    /*src:url('../fonts/woff2/IRANSansWeb_Bold.woff2') format('woff2'),*/
+    /*url('../fonts/woff/IRANSansWeb_Bold.woff') format('woff'),*/
+    /*url('../fonts/ttf/IRANSansWeb_Bold.ttf') format('truetype');*/
+/*}*/
+/*@font-face {*/
+    /*font-family: 'IranSans' ;*/
+    /*font-style: normal;*/
+    /*font-weight: normal;*/
+    /*!*src: url('../fonts/eot/IRANSansWeb.eot'); !* IE9 Compat Modes *!*!*/
+    /*src: url('../fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'), !* IE6-IE8 *!*/
+    /*url('../fonts/woff2/IRANSansWeb.woff2') format('woff2'), !* Super Modern Browsers *!*/
+    /*url('../fonts/woff/IRANSansWeb.woff') format('woff'), !* Pretty Modern Browsers *!*/
+    /*url('../fonts/ttf/IRANSansWeb.ttf')  format('truetype'); !* Safari, Android, iOS *!*/
+
+/*}*/
+/*@font-face {*/
+    /*font-family: 'FontAwesome';*/
+    /*src: url('../fonts/fontawesome-webfont.eot');*/
+    /*src: url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'),*/
+    /*url('../fonts/fontawesome-webfont.woff2') format('woff2'),*/
+    /*url('../fonts/fontawesome-webfont.woff') format('woff'),*/
+    /*url('../fonts/fontawesome-webfont.ttf') format('truetype'),*/
+    /*url('../fonts/fontawesome-webfont.svg') format('svg');*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
+/*@media screen and (-webkit-min-device-pixel-ratio:0)*/
+/*{*/
+    /*@font-face {*/
+        /*font-family: 'IranSans';*/
+        /*font-style: normal;*/
+        /*font-weight: bold;*/
+        /*src: url('../fonts/eot/IRANSansWeb.eot'); !* IE9 Compat Modes *!*/
+        /*src: url('../fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'), !* IE6-IE8 *!*/
+        /*url('../fonts/woff2/IRANSansWeb.woff2') format('woff2'), !* Super Modern Browsers *!*/
+        /*url('../fonts/woff/IRANSansWeb.woff') format('woff'), !* Pretty Modern Browsers *!*/
+        /*url('../fonts/ttf/IRANSansWeb.ttf')  format('truetype'); !* Safari, Android, iOS *!*/
+
+    /*}*/
+/*}*/
+
+body{
+    direction: rtl;
+    background: #f5f5f5;
+}
+a:active, a:focus {
+    outline: none !important;
+}
+a {
+    text-decoration: unset !important;
+
+}
+
+/**/
+
+/*.fontssm {*/
+    /*font-size: 9pt*/
+/*}*/
+
+/*.fontsm {*/
+    /*font-size: 10pt*/
+/*}*/
+
+/*.fontmd {*/
+    /*font-size: 12pt*/
+/*}*/
+
+/*.fontlg {*/
+    /*font-size: 16pt*/
+/*}*/
+
+@media (min-width: 576px) {
+
+}
+
+@media (max-width: 768px) {
+    .fontxs{
+        font-size: 55%;
+    }
+    .fontsssm {
+        font-size: 60%;
+    }
+    .fontssm {
+        font-size: 70%;
+    }
+
+    .fontsm {
+        font-size: 90%;
+    }
+
+    .fontmd {
+        font-size: 100%;
+    }
+
+    .fontlg {
+        font-size: 105%;
+    }
+    .font{
+        font-size: 100%;
+    }
+    .fontComment{
+        font-size: 90%;
+    }
+    .fontSelect{
+        font-size:75%;
+    }
+    .fontPrice{
+        font-size:80%;
+    }
+    .font-m50-p90{
+        /*font-size: 50%;*/
+        font-size: 60%;
+    }
+
+    .font-m65-p120{
+        /*font-size: 65%;*/
+        font-size: 75%;
+    }
+    .font-m60-p95{
+        /*font-size: 60%;*/
+        font-size: 70%;
+    }
+
+    #bookanme{
+        font-size: 95%;
+    }
+    .your-rating .jq-star , .my-rating .jq-star{
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .marg-t-3{
+        margin-top: 16px !important;
+    }
+    #search_res p{
+        text-align: center;
+    }
+    .choose_option{
+        width: 40px;
+        height: 40px;
+    }
+    .font85{
+        font-size: 85%;
+    }
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+    .fontxs{
+        font-size: 60%;
+    }
+    .fontsssm {
+        font-size: 75%;
+    }
+    .fontssm {
+        font-size: 80%;
+    }
+
+    .fontsm {
+        font-size: 90%;
+    }
+
+    .fontmd {
+        font-size: 110%;
+    }
+
+    .fontlg {
+        font-size: 120%;
+    }
+    .fontComment{
+        font-size: 110%;
+    }
+    .fontSelect{
+        font-size:85%;
+    }
+    .fontPrice{
+        font-size:125%;
+    }
+    .font-m50-p90{
+        font-size: 90%;
+    }
+    .font-m65-p120{
+        font-size: 120%;
+    }
+    .font-m60-p95{
+        font-size: 95%;
+    }
+    #bookanme{
+        font-size: 110%;
+    }
+    .my-rating .jq-star{
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .marg-t-3{
+        margin-top: 12px !important;
+    }
+    #search_res p{
+        text-align: right;
+    }
+    .container{
+        min-height: 430px;
+    }
+    .choose_option{
+        width: 70px;
+        height: 40px;
+    }
+}
